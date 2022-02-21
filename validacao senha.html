@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao2</title>
+    
+</head>
+<body>
+    <h1>Verificacao de senha</h1>
+    <input type="password " />
+    <span></span>
+
+    <script>
+        "use strict";
+
+        const input = document.querySelector('input');
+        const Text = document.querySelector('span');
+
+       imput.addEventListnner('input', verificacaoDeSenha);
+       
+       let regExpweak = /[a-z]/;
+       let regExpMedium = /\d+/;
+       let regExpStrong = /!@#$%^&*()-+/;
+
+       let min_weak_passoword = 6;
+       let min_medium_passoword = 6;
+       let min_strong_passoword = 6;
+
+       
+
+       function verificacaoDeSenha(){
+        let input_weak = input.value.match(regExpweak);
+        let input_medium = input.value.match(regExpMedium);
+        let input_strong = input.value.match(regExpStrong);
+
+        if(input.value){
+           if(input.value.lenght<= min_weak_passoword && (input_weak || input_medium || input_strong)){
+               text.context= "Sua senha é fraca"
+           }
+           if (input.value){
+           if(input.value.lenght>= min_medium_passoword && ((input_weak && input_medium) || (input_medium|| input_strong))){
+               text.context= "Sua senha é Média"
+           }  
+
+           if(input.value){
+           if(input.value.lenght>= min_strong_passoword && input_weak && input_medium && && input_strong) {
+               text.context= "Sua senha é forte"
+           }  
+        }
+       }
+</body>
+</html>
+
+// codigo quase funciondando ,mas precisa ainda de umas correções...
